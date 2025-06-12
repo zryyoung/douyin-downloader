@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="抖音主页作品批量下载"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/termuxTips"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" 
+        android:layout_marginTop="20dp"/>
+    
+    <TextView
+        android:id="@+id/termuxTips"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="下载并安装 ZeroTermux/Termux，更新包并配置环境安装相关包。\n请执行以下命令：\n1. git clone https://github.com/anstones/dy-downloader\n2. cd dy-downloader\n3. python -m pip install -r requirements.txt"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" /> <!-- android:visibility="gone" 设置为 gone -->
+        
+    <EditText
+        android:id="@+id/linkEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="请输入多个抖音链接（每行一个）"
+        android:inputType="textMultiLine|textUri"
+        android:gravity="top|start"
+        android:minLines="2"
+        android:maxLines="10"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/termuxTips"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/downloadButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="下载"
+        app:layout_constraintTop_toBottomOf="@id/linkEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/CookieEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="请输入cookie"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/downloadButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+    
+    <Button
+        android:id="@+id/deleteCookieButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="删除 Cookie"
+        app:layout_constraintTop_toBottomOf="@id/CookieEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/warningTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提示: 请确保您已登录并获取 sessdata"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintTop_toBottomOf="@id/deleteCookieButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+    
+    <TextView
+        android:id="@+id/saveTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="保存路径："
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/warningTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="0dp"/>
+    
+    <EditText
+        android:id="@+id/SaveEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="/sdcard/Download/"
+        android:inputType="textUri"
+        app:layout_constraintTop_toBottomOf="@id/saveTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="0dp"/>
+    
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

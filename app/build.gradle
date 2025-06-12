@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.chaquo.python'
+
+android {
+    namespace "com.download.douyin"
+    compileSdkVersion 36
+
+    defaultConfig {
+        applicationId "com.download.douyin"
+        minSdkVersion 24
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0"
+
+        // ✅ Chaquopy 要求设置 ABI
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+
+        // ✅ Chaquopy Python 配置
+        python {
+            buildPython "/data/data/com.termux/files/usr/bin/python3"
+            pip {
+                install "requests==2.28.2"
+                //install "pyinstaller==5.7.0"
+                install "tqdm==4.65.0"
+                install "PyYAML==5.1"
+            }
+            
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            python.srcDirs = ['src/main/python']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'org.yaml:snakeyaml:1.33'
+}
