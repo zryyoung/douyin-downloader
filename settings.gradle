@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DouYin2"
+rootProject.name = "douyin-downloader"
 include ':app'

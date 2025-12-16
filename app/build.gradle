@@ -19,7 +19,7 @@ android {
 
         // ✅ Chaquopy Python 配置
         python {
-            buildPython "/data/data/com.termux/files/usr/bin/python3"
+            buildPython "python3"
             pip {
                 install "requests==2.28.2"
                 //install "pyinstaller==5.7.0"
